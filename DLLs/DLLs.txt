@@ -1,0 +1,84 @@
+>>> import os
+>>> import mmap
+>>> def memory_map(filename, access=mmap.ACCESS_WRITE):
+	size = os.path.getsize(filename)
+	fd = os.open(filename, os.O_RDWR)
+	return mmap.mmap(fd, size, access=access)
+
+>>> size = 10000
+>>> with open('data'. 'wb') as f:
+	
+SyntaxError: invalid syntax
+>>> with open('data', 'wb') as f:
+	f.seek(size-1)
+	f.write(b'\x00')
+
+	
+9999
+1
+>>> m = memory_map('data')
+>>> len(m)
+10000
+>>> m[0:10]
+b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+>>> m[0:11] b
+SyntaxError: invalid syntax
+>>> m[0:11] = b'Hello world'
+>>> m.close()
+>>> with open('data', 'rb') as f:
+	print(f.read(11))
+
+	
+b'Hello world'
+>>> with memory_map('data') as m:
+	print(len(m))
+	print(m[0:10])
+
+	
+10000
+b'Hello worl'
+>>> m.closed
+True
+>>> m = memory_map('data')
+>>> v = memoryview(m).cast('I')
+>>> v[0] = 7
+>>> m[0:4]
+b'\x07\x00\x00\x00'
+>>> m[0:4] = b'\x07\x01\x00\x00
+SyntaxError: EOL while scanning string literal
+>>> m[0:4]  = b'\x07\x01\x00\x00'
+>>> v[0]
+263
+>>> os.path.exists('/tmp/spam')
+
+False
+>>> os.path.exists('/etc/passwd')
+False
+>>>  os.path.realpath('/usr/local/bin/python3')
+ 
+SyntaxError: unexpected indent
+>>> os.path.realpath('/usr/local/bin/python3')
+'C:\\usr\\local\\bin\\python3'
+>>> import time
+>>> time.ctime(os.path.getmtime('/etc/passwd'))
+Traceback (most recent call last):
+  File "<pyshell#217>", line 1, in <module>
+    time.ctime(os.path.getmtime('/etc/passwd'))
+  File "C:\Users\Church\AppData\Local\Programs\Python\Python39\lib\genericpath.py", line 55, in getmtime
+    return os.stat(filename).st_mtime
+FileNotFoundError: [WinError 3] The system cannot find the path specified: '/etc/passwd'
+>>> import os
+>>> names = os.listdir()
+>>> names
+['data', 'DLLs', 'Doc', 'frange.py', 'include', 'Lib', 'libs', 'LICENSE.txt', 'NEWS.txt', 'newsample.bin', 'python.exe', 'python3.dll', 'python39.dll', 'pythonw.exe', 'sample.bin', 'Scripts', 'tcl', 'Tools', 'vcruntime140.dll', 'vcruntime140_1.dll']
+
+    os.listdir('data')
+NotADirectoryError: [WinError 267] The directory name is invalid: 'data'
+>>> os.path('DLLs')
+
+>>> names = os.listdir('DLLs')
+>>> names
+['libcrypto-1_1.dll', 'libffi-7.dll', 'libssl-1_1.dll', 'py.ico', 'pyc.ico', 'pyd.ico', 'pyexpat.pyd', 'python_lib.cat', 'python_tools.cat', 'select.pyd', 'sqlite3.dll', 'tcl86t.dll', 'tk86t.dll', 'unicodedata.pyd', 'winsound.pyd', '_asyncio.pyd', '_bz2.pyd', '_ctypes.pyd', '_ctypes_test.pyd', '_decimal.pyd', '_elementtree.pyd', '_hashlib.pyd', '_lzma.pyd', '_msi.pyd', '_multiprocessing.pyd', '_overlapped.pyd', '_queue.pyd', '_socket.pyd', '_sqlite3.pyd', '_ssl.pyd', '_testbuffer.pyd', '_testcapi.pyd', '_testconsole.pyd', '_testimportmultiple.pyd', '_testinternalcapi.pyd', '_testmultiphase.pyd', '_tkinter.pyd', '_uuid.pyd', '_zoneinfo.pyd']
+>>> 
+
+

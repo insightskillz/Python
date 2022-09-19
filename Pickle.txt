@@ -1,0 +1,4 @@
+>>> import math
+>>> import pickle.
+>>> pickle.dumps(math.cos)
+b'\x80\x03cmath\ncos\nq\x00.'
